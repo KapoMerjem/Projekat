@@ -1,0 +1,12 @@
+{
+    "name": "ibu/projekat",
+    "description": "Wedding planner",
+    "license": "apache2",
+    "authors": [
+        {
+            "name": "KapoMerjem",
+            "email": "61578763+KapoMerjem@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
