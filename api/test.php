@@ -12,11 +12,13 @@ $user_dao = new UserDao();
 $user1 = [
 "name" => "Sabina",
 "surname" => "Topić",
-"email" => "sabiii@stu.ibu.edu.ba",
+"email" => "sabiinaa@stu.ibu.edu.ba",
 "phone_number" => "061275523",
 "username" => "SabinaTopic",
-"password" => "sabi12345"
+"password" => "sabina123"
 ];
+
+
 $user = $user_dao->update_user(7, $user1);
 
 // $user_dao->get_user_by_email("mejakapo@gmail.com");

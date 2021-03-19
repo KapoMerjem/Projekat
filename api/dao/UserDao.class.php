@@ -21,8 +21,15 @@ public function add_user($user){
 }
 
 public function update_user($user_id, $user){
-  $sql = "UPDATE users SET name = :name, surname = :surname, email = :email, phone_number =  :phone_number, username = :username, password = :password WHERE user_id = :user_id";
-  $stmt = $this->connection->prepare($sql);
+  $query = "UPDATE users SET ";
+  foreach($user as $name => $value){
+    $query .= $name ."= :". $name. ", " ;
+  }
+  $query = substr($query, 0, -2);
+  $query .= "WHERE user_id = :user_id ";
+
+
+  $stmt = $this->connection->prepare($query);
   $user['user_id'] = $user_id;
   $stmt->execute($user);
 }
