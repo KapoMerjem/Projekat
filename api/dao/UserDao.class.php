@@ -21,18 +21,11 @@ public function add_user($user){
 }
 
 public function update_user($user_id, $user){
-  $query = "UPDATE users SET ";
-  foreach($user as $name => $value){
-    $query .= $name ."= :". $name. ", " ;
+  $this->update("users", $user_id, $user);
   }
-  $query = substr($query, 0, -2);
-  $query .= "WHERE user_id = :user_id ";
 
-
-  $stmt = $this->connection->prepare($query);
-  $user['user_id'] = $user_id;
-  $stmt->execute($user);
+  public function update_user_by_email($email, $user){
+    $this->update("users", $email, $user, "email");
+    }
 }
-}
-
- ?>
+?>
