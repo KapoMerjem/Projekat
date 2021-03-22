@@ -10,7 +10,6 @@ public function __construct(){
   try {
     $this->connection= new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_SCHEME, Config::DB_USERNAME, Config::DB_PASSWORD);
     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "RADIIII";
   } catch(PDOException $e) {
     throw $e;
   }
@@ -18,7 +17,7 @@ public function __construct(){
 }
 
 public function insert($table, $entity){
-  $query = "INSERT INTO $(table) (";
+  $query = "INSERT INTO ${table} (";
     foreach ($entity as $column => $value) {
       $query .= $column.", ";
     }
@@ -32,7 +31,7 @@ public function insert($table, $entity){
 
       $stmt = $this->connection->prepare($query);
       $stmt->execute($entity);
-      $entity['id'] = $$this->connection->lastInsertId();
+      $entity['id'] = $this->connection->lastInsertId();
       return $entity;
 }
 
