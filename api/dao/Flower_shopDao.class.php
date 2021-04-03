@@ -6,9 +6,7 @@ class Flower_shopDao extends BaseDao{
     parent::__construct("flower_shops");
   }
 
-  public function get_all_flower_shops(){
-    return $this->query("SELECT * FROM flower_shops", []);
-  }
+
 
 }
 

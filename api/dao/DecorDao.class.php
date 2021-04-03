@@ -6,9 +6,7 @@ class DecorDao extends BaseDao{
     parent::__construct("decors");
   }
 
-  public function get_all_decors(){
-    return $this->query("SELECT * FROM decors", []);
-  }
+
 
 }
 

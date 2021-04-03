@@ -6,9 +6,7 @@ class Flower_catalogDao extends BaseDao{
     parent::__construct("flower_catalogs");
   }
 
-  public function get_all_flower_catalogs(){
-    return $this->query("SELECT * FROM flower_catalogs", []);
-  }
+
 
 }
 

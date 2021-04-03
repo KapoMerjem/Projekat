@@ -6,9 +6,7 @@ class Restaurnat_catalogDao extends BaseDao{
     parent::__construct("restaurant_catalogs");
   }
 
-  public function get_all_restaurant_catalogs(){
-    return $this->query("SELECT * FROM restaurant_catalogs", []);
-  }
+
 
 }
 

@@ -6,9 +6,7 @@ class SingerDao extends BaseDao{
     parent::__construct("singers");
   }
 
-  public function get_all_singers(){
-    return $this->query("SELECT * FROM singers", []);
-  }
+  
 
 }
 

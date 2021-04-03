@@ -6,9 +6,7 @@ class RestaurantDao extends BaseDao{
     parent::__construct("restaurants");
   }
 
-  public function get_all_restaurants(){
-    return $this->query("SELECT * FROM restaurants", []);
-  }
+
 
 }
 
