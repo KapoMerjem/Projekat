@@ -1,7 +1,7 @@
 <?php
 
 require_once dirname(__FILE__)."/../config.php";
-echo "RADIIII";
+//echo "RADIIII";
 class BaseDao{
 
 protected $connection;
@@ -46,7 +46,7 @@ public function update($table, $user_id, $entity, $id_column = "id"){
 
   $stmt = $this->connection->prepare($query);
   $entity['user_id'] = $user_id;
-  $stmt->execute($entity);
+  //$stmt->execute($entity);
 
 }
 
