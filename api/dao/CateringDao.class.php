@@ -5,7 +5,7 @@ class CateringDao extends BaseDao{
 
 
     public function __construct(){
-      parent::__construct("bands");
+      parent::__construct("caterings");
     }
 
   }
