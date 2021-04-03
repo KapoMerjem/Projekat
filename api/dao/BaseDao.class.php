@@ -1,7 +1,15 @@
 <?php
 
 require_once dirname(__FILE__)."/../config.php";
-//echo "RADIIII";
+
+/**
+* The main class for interaction with database.
+*
+* All other DAO classes should inherit this class.
+*
+*@author Merjem Kapo
+*/
+
 class BaseDao{
 
 protected $connection;
