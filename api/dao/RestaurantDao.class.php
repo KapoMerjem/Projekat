@@ -21,6 +21,6 @@ class RestaurantDao extends BaseDao{
   }
   }
 
-}
+
 
 ?>

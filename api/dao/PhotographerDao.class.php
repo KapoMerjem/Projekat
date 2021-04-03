@@ -23,6 +23,4 @@ return $this->query("SELECT * FROM photographers", []);
 
 
 
-}
-
 ?>

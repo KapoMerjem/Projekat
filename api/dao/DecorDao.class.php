@@ -22,6 +22,5 @@ return $this->query("SELECT * FROM decors", []);
 }
 
 
-}
 
 ?>

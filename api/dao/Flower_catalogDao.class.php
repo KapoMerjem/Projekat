@@ -22,7 +22,4 @@ return $this->query("SELECT * FROM flower_catalogs", []);
 }
 
 
-
-}
-
 ?>

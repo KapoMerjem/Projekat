@@ -7,32 +7,31 @@ error_reporting(E_ALL);
 require_once dirname(__FILE__)."/dao/UserDao.class.php";
 require_once dirname(__FILE__)."/dao/BandDao.class.php";
 require_once dirname(__FILE__)."/dao/CateringDao.class.php";
-//require_once dirname(__FILE__)."/dao/CityDao.class.php";
-//require_once dirname(__FILE__)."/dao/DecorDao.class.php";
-//require_once dirname(__FILE__)."/dao/Flower_catalogDao.class.php";
-//require_once dirname(__FILE__)."/dao/Flower_shopDao.class.php";
-//require_once dirname(__FILE__)."/dao/photographerDao.class.php";
-//require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
-//require_once dirname(__FILE__)."/dao/Restaurant_catalogDao.class.php";
-//require_once dirname(__FILE__)."/dao/SingerDao.class.php";
+require_once dirname(__FILE__)."/dao/CityDao.class.php";
+require_once dirname(__FILE__)."/dao/DecorDao.class.php";
+require_once dirname(__FILE__)."/dao/Flower_catalogDao.class.php";
+require_once dirname(__FILE__)."/dao/Flower_shopDao.class.php";
+require_once dirname(__FILE__)."/dao/photographerDao.class.php";
+require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
+require_once dirname(__FILE__)."/dao/Restaurant_catalogDao.class.php";
+require_once dirname(__FILE__)."/dao/SingerDao.class.php";
 
-//$dao = new CateringDao();
+$dao = new CateringDao();
 
-//$catering1 = ([
-//  "name" => "FoodSa",
-//"sweet" => "1",
-//"salty" => "1",
-//"cakes" => "1",
-//"drinks" => "1",
-//"cookies" => "0",
-//"meat" => "0",
-//"chicken" => "1",
-//"fish" => "1",
-//])
+$catering = [
+  "name" => "Food SA",
+  "sweet" => "1",
+  "salty" => "1",
+  "cakes" => "1",
+  "drinks" => "1",
+  "cookies" => "0",
+  "meat" => "0",
+  "chicken" => "1",
+  "fish" => "1"
+];
 
-//$catering = $dao->add_catering($catering1);
-//print_r($catering1);
-
+$catering = $dao->add($catering);
+print_r($catering);
 
 //$band1 = [
 

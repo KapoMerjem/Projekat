@@ -21,6 +21,5 @@ class SingerDao extends BaseDao{
   }
   }
 
-}
 
 ?>

@@ -20,6 +20,6 @@ class Restaurnat_catalogDao extends BaseDao{
 
   }
   }
-}
+
 
 ?>
