@@ -1,11 +1,14 @@
 <?php
+require_once dirname(__FILE__)."/BaseDao.class.php";
 
 class CateringDao extends BaseDao{
 
-  public function get_catering_by_name($name){
+
+    public function __construct(){
+      parent::__construct("bands");
+    }
 
   }
-
 }
 
 ?>
