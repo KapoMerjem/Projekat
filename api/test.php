@@ -30,7 +30,9 @@ $catering = [
   "fish" => "1"
 ];
 
-$catering = $dao->add($catering);
+
+
+$catering = $dao->get_all_caterings(); //$dao->add($catering);
 print_r($catering);
 
 //$band1 = [
