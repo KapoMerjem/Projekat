@@ -16,24 +16,37 @@ require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
 require_once dirname(__FILE__)."/dao/Restaurant_catalogDao.class.php";
 require_once dirname(__FILE__)."/dao/SingerDao.class.php";
 
-$dao = new CateringDao();
 
-$catering = [
-  "name" => "Food SA",
-  "sweet" => "1",
-  "salty" => "1",
-  "cakes" => "1",
-  "drinks" => "1",
-  "cookies" => "0",
-  "meat" => "0",
-  "chicken" => "1",
-  "fish" => "1"
-];
+$dao = new BandDao();
+
+$bands = $dao->get_all($_GET['offset'], $_GET['limit']);
+print_r($bands);
+
+//for($i = 0; $i < 5000; $i++){
+  //$dao->add([
+    //"name" => base64_encode(random_bytes(10)),
+    //"price_per_hour" => "180KM"
+  //]);
+//}
+//$dao = new CateringDao();
+
+//$catering = [
+  //"name" => "Food SA",
+  //"sweet" => "1",
+  //"salty" => "1",
+  //"cakes" => "1",
+  //"drinks" => "1",
+  //"cookies" => "0",
+  //"meat" => "0",
+  //"chicken" => "1",
+  //"fish" => "1"
+//];
 
 
 
-$catering = $dao->get_all_caterings(); //$dao->add($catering);
-print_r($catering);
+//$catering = $dao->get_all_caterings(); //$dao->add($catering);
+//print_r($catering);
+
 
 //$band1 = [
 
@@ -50,20 +63,6 @@ print_r($catering);
 
 //$user = $user_dao->get_user_by_user_id(3);
 
-//$user1 = [
 
-//"name" => "Hana",
-//"surname" => "Kapo",
-//"email" => "hanak@gmail.com",
-//"phone_number" => "061025478",
-//"username" => "HanaK",
-//"password" => "kapo123"
-//];
-
-
-//$user = $user_dao->add_user($user1);
-
-
-//print_r($user1);
 
  ?>
