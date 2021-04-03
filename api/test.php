@@ -6,17 +6,32 @@ error_reporting(E_ALL);
 
 require_once dirname(__FILE__)."/dao/UserDao.class.php";
 require_once dirname(__FILE__)."/dao/BandDao.class.php";
+require_once dirname(__FILE__)."/dao/CateringDao.class.php";
+//require_once dirname(__FILE__)."/dao/CityDao.class.php";
+//require_once dirname(__FILE__)."/dao/DecorDao.class.php";
+//require_once dirname(__FILE__)."/dao/Flower_catalogDao.class.php";
+//require_once dirname(__FILE__)."/dao/Flower_shopDao.class.php";
+//require_once dirname(__FILE__)."/dao/photographerDao.class.php";
+//require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
+//require_once dirname(__FILE__)."/dao/Restaurant_catalogDao.class.php";
+//require_once dirname(__FILE__)."/dao/SingerDao.class.php";
 
-$dao = new BandDao();
+//$dao = new CateringDao();
 
-$dao->add_band([
-  "name" => "Regina",
-  "price_per_hour" => "150KM"
-]);
+//$catering1 = ([
+//  "name" => "FoodSa",
+//"sweet" => "1",
+//"salty" => "1",
+//"cakes" => "1",
+//"drinks" => "1",
+//"cookies" => "0",
+//"meat" => "0",
+//"chicken" => "1",
+//"fish" => "1",
+//])
 
-$bands = $dao->get_all_bands();
-
-print_r($bands);
+//$catering = $dao->add_catering($catering1);
+//print_r($catering1);
 
 
 //$band1 = [
@@ -46,9 +61,6 @@ print_r($bands);
 
 
 //$user = $user_dao->add_user($user1);
-
-
-// $user_dao->get_user_by_email("mejakapo@gmail.com");
 
 
 //print_r($user1);
