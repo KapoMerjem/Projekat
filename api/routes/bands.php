@@ -1,7 +1,10 @@
 <?php
 
 Flight::route('GET /bands', function(){
-    Flight::json(  Flight::bandDao->get_by_id(0,10));
+    $offset = Flight::query('offset', 0);
+    $limit = Flight::query('limit', 10);
+
+    Flight::json(Flight::bandDao()->get_all($offset, $limit));
 });
 
 Flight::route('GET /bands/@id', function($id){
@@ -15,8 +18,8 @@ Flight::route('POST /bands', function(){
 Flight::route('PUT /bands/@id', function($id){
     $request = Flight::request();
     $data = $request->data->getData();
-    Flight::bandDao->update($id, $data);
-    $bands = Flight::bandDao->get_by_id($id);
+    Flight::bandDao()->update($id, $data);
+    $bands = Flight::bandDao()->get_by_id($id);
     Flight::json($band);
 });
 
