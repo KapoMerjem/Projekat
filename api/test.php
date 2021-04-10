@@ -19,8 +19,9 @@ require_once dirname(__FILE__)."/dao/SingerDao.class.php";
 
 $dao = new BandDao();
 
-$bands = $dao->get_all($_GET['offset'], $_GET['limit']);
-print_r($bands);
+$bands = $dao->get_all();
+//print_r($bands);
+echo json_encode($bands, JSON_PRETTY_PRINT);
 
 //for($i = 0; $i < 5000; $i++){
   //$dao->add([

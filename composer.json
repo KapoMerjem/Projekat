@@ -8,5 +8,7 @@
             "email": "61578763+KapoMerjem@users.noreply.github.com"
         }
     ],
-    "require": {}
+    "require": {
+        "mikecao/flight": "^1.3"
+    }
 }
