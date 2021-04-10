@@ -11,7 +11,7 @@ class BandDao extends BaseDao{
     return $this->query("SELECT *
                          FROM bands
                          WHERE LOWER(name) LIKE CONCAT('%', :name, '%')
-                         LIMIT ${limit} OFFSET ${offset}", ["name" => strtlower($search)]);
+                         LIMIT ${limit} OFFSET ${offset}", ["name" => strtolower($search)]);
   }
 
 }

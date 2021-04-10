@@ -6,6 +6,8 @@ error_reporting(E_ALL);
 
 require_once dirname(__FILE__).'/../vendor/autoload.php';
 require_once dirname(__FILE__).'/dao/BandDao.class.php';
+require_once dirname(__FILE__).'/services/BandService.class.php';
+
 
 /*Utility function for reading query parameters from URL*/
 Flight::map('query', function($name, $default_value = NULL){
@@ -17,6 +19,9 @@ Flight::map('query', function($name, $default_value = NULL){
 
 /*Register DAO layer*/
 Flight::register('bandDao', 'BandDao');
+
+/*Register Business logic layer services*/
+Flight::register('bandService', 'BandService');
 
 /*Include all routes*/
 require_once dirname(__FILE__)."/routes/bands.php";

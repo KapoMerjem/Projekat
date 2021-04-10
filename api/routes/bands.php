@@ -3,14 +3,9 @@
 Flight::route('GET /bands', function(){
     $offset = Flight::query('offset', 0);
     $limit = Flight::query('limit', 10);
-
     $search = Flight::query('search');
-
-    if($search){
-      Flight::json(Flight::bandDao()->get_bands($search, $offset, $limit));
-    }else{
-      Flight::json(Flight::bandDao()->get_all($offset, $limit));
-    }
+    
+    Flight::json(Flight::bandService()->get_bands($search, $offset, $limit));
 });
 
 Flight::route('GET /bands/@id', function($id){
