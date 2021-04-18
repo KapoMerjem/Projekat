@@ -16,6 +16,7 @@ Flight::route('POST /bands', function(){
     $data = Flight::request()->data->getData();
     Flight::json(Flight::bandService()->add($data));
 });
+
 Flight::route('PUT /bands/@id', function($id){
     $data = Flight::request()->data->getData();
     Flight::json(Flight::bandService()->update($id, $data));
