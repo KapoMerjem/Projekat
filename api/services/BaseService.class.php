@@ -14,7 +14,7 @@ class BaseService {
 
   public function update($id, $data){
     $this->dao->update($id, $data);
-    $bands = $this->dao->get_by_id($id);
+    $cities = $this->dao->get_by_id($id);
   }
 }
  ?>
