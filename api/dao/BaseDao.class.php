@@ -61,7 +61,7 @@ public function __construct($table){
 
     $stmt = $this->connection->prepare($query);
     $entity['id'] = $id;
-    $stmt->execute($entity);
+    //$stmt->execute($entity);
 
   }
   protected function query($query, $params){

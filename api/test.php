@@ -14,7 +14,7 @@ require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
 //$city_dao = new CityDao();
 //$photographer_dao = new PhotographerDao();
 //$reservation_dao = new ReservationDao();
-$restaurant_dao = new RestaurantDao();
+//$restaurant_dao = new RestaurantDao();
 
 
 // $user1 = [
@@ -89,6 +89,19 @@ $restaurant_dao = new RestaurantDao();
 // ];
 //
 // $photographer = $photographer_dao->add($photographer2);
+// print_r($photographer);
+// $dao = new PhotographerDao();
+//
+// $photographer = [
+// "name" => "John",
+// "surname" => "Doe",
+// "email" => "johnd@gmail.com",
+// "status" => "ACTIVE"
+// ];
+// $dao->update(1, [
+//   "price" => "350 KM"
+// ]);
+// $photographer = $dao->get_all_photographers();
 // print_r($photographer);
 
 // $reservation1 = [

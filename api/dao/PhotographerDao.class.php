@@ -6,10 +6,9 @@ class PhotographerDao extends BaseDao{
     parent::__construct("photographers");
   }
 
-
+  public function get_all_photographers(){
+    return $this->query("SELECT * FROM photographers", []);
+  }
 
 }
-
-
-
 ?>
