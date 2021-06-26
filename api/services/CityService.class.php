@@ -9,11 +9,11 @@ class CityService extends BaseService{
     $this->dao = new CityDao();
   }
 
-  public function get_cities($search, $offset, $limit){
+  public function get_cities($search, $offset, $limit, $order){
     if($search){
-      return $this->dao->get_cities($search, $offset, $limit);
+      return $this->dao->get_cities($search, $offset, $limit, $order);
     }else{
-      return $this->dao->get_all($offset, $limit);
+      return $this->dao->get_all($offset, $limit, $order);
     }
   }
 
