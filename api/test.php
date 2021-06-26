@@ -14,8 +14,9 @@ $dao = new CityDao();
 
 print_r($_GET);
 die;
-$cities = $dao->get_all();
-print_r($cities);
+$cities = $dao->get_all($_GET['iffset'], $_GET['limit']);
+//print_r($cities);
+echo json_encode($cities, JSON_PRETTY_PRINT);
 
 // $dao = new CityDao();
 //
