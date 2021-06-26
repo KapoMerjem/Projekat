@@ -6,6 +6,7 @@ error_reporting(E_ALL);
 
 require_once dirname(__FILE__).'/../vendor/autoload.php';
 require_once dirname(__FILE__).'/services/CityService.class.php';
+require_once dirname(__FILE__).'/services/UserService.class.php';
 
 
 /*Utility function for reading query parameters from URL*/
@@ -18,9 +19,10 @@ Flight::map('query', function($name, $default_value = NULL){
 
 /*Register Business logic layer services*/
 Flight::register('cityService', 'CityService');
-
+Flight::register('userService', 'UserService');
 /*Include all routes*/
 require_once dirname(__FILE__)."/routes/cities.php";
+require_once dirname(__FILE__)."/routes/users.php";
 
 Flight::start();
 
