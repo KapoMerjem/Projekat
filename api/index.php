@@ -20,6 +20,7 @@ Flight::map('query', function($name, $default_value = NULL){
 /*Register Business logic layer services*/
 Flight::register('cityService', 'CityService');
 Flight::register('userService', 'UserService');
+
 /*Include all routes*/
 require_once dirname(__FILE__)."/routes/cities.php";
 require_once dirname(__FILE__)."/routes/users.php";

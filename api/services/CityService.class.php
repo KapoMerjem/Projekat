@@ -19,7 +19,7 @@ class CityService extends BaseService{
 
 public function add($city){
   //validation of account data
-  if(!isset($city['name'])) throw new Exception("Bla bla name is missing! ");
+  if(!isset($city['name'])) throw new Exception("Name is missing! ");
 
   return parent::add($city);
 
