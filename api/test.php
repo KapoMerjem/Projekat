@@ -10,6 +10,22 @@ require_once dirname(__FILE__)."/dao/PhotographerDao.class.php";
 require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
 require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
 
+$dao = new CityDao();
+
+print_r($_GET);
+die;
+$cities = $dao->get_all();
+print_r($cities);
+
+// $dao = new CityDao();
+//
+// for ($i = 0; $i < 1000; $i++){
+//   $dao->add([
+//     "name" => base64_encode(random_bytes(10))
+//   ]);
+// }
+
+
 // $user_dao = new UserDao();
 //$city_dao = new CityDao();
 //$photographer_dao = new PhotographerDao();
