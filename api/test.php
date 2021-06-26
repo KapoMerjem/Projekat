@@ -12,22 +12,33 @@ require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
 
 $user_dao = new UserDao();
 
-$user1 = [
-  "name" => "Merjem Kapo",
-  "email" => "merjem.k@gmail.com",
-  "password" => "12345",
-];
+//$user1 = [
+//  "name" => "Merjem Kapo",
+//  "email" => "merjem.k@gmail.com",
+//  "password" => "12345",
+//];
 
-$user = $user_dao->add_user($user1);
+//$user = $user_dao->add_user($user1);
 //$user = $user_dao->update_user_by_email("meja@stu.ibu.edu.ba", $user1);
 
+//print_r($user);
+
+$user1 = [
+"name" => "Merjem",
+"surname" => "Kapo",
+"email" => "mk@gmail.com",
+"password" => "mk12345"
+];
+
+$user = $user_dao->add($user1);
 print_r($user);
+
 
 //$dao = new BandDao();
 
 //$bands = $dao->get_all();
 //print_r($bands);
-//echo json_encode($bands, JSON_PRETTY_PRINT);
+//echo json_encode($users, JSON_PRETTY_PRINT);
 
 //for($i = 0; $i < 5000; $i++){
   //$dao->add([
