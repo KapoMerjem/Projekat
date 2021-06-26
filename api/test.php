@@ -5,23 +5,29 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 require_once dirname(__FILE__)."/dao/UserDao.class.php";
-require_once dirname(__FILE__)."/dao/BandDao.class.php";
-require_once dirname(__FILE__)."/dao/CateringDao.class.php";
 require_once dirname(__FILE__)."/dao/CityDao.class.php";
-require_once dirname(__FILE__)."/dao/DecorDao.class.php";
-require_once dirname(__FILE__)."/dao/Flower_catalogDao.class.php";
-require_once dirname(__FILE__)."/dao/Flower_shopDao.class.php";
-require_once dirname(__FILE__)."/dao/photographerDao.class.php";
+require_once dirname(__FILE__)."/dao/PhotographerDao.class.php";
 require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
-require_once dirname(__FILE__)."/dao/Restaurant_catalogDao.class.php";
-require_once dirname(__FILE__)."/dao/SingerDao.class.php";
+require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
 
+$user_dao = new UserDao();
 
-$dao = new BandDao();
+$user1 = [
+  "name" => "Merjem Kapo",
+  "email" => "merjem.k@gmail.com",
+  "password" => "12345",
+];
 
-$bands = $dao->get_all();
+$user = $user_dao->add_user($user1);
+//$user = $user_dao->update_user_by_email("meja@stu.ibu.edu.ba", $user1);
+
+print_r($user);
+
+//$dao = new BandDao();
+
+//$bands = $dao->get_all();
 //print_r($bands);
-echo json_encode($bands, JSON_PRETTY_PRINT);
+//echo json_encode($bands, JSON_PRETTY_PRINT);
 
 //for($i = 0; $i < 5000; $i++){
   //$dao->add([
