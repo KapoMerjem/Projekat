@@ -10,31 +10,130 @@ require_once dirname(__FILE__)."/dao/PhotographerDao.class.php";
 require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
 require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
 
-$user_dao = new UserDao();
-
-//$user1 = [
-//  "name" => "Merjem Kapo",
-//  "email" => "merjem.k@gmail.com",
-//  "password" => "12345",
-//];
-
-//$user = $user_dao->add_user($user1);
-//$user = $user_dao->update_user_by_email("meja@stu.ibu.edu.ba", $user1);
-
-//print_r($user);
-
-$user1 = [
-"name" => "Merjem",
-"surname" => "Kapo",
-"email" => "mk@gmail.com",
-"password" => "mk12345"
-];
-
-$user = $user_dao->add($user1);
-print_r($user);
+// $user_dao = new UserDao();
+//$city_dao = new CityDao();
+//$photographer_dao = new PhotographerDao();
+//$reservation_dao = new ReservationDao();
+$restaurant_dao = new RestaurantDao();
 
 
-//$dao = new BandDao();
+// $user1 = [
+// "name" => "Merjem",
+// "surname" => "Kapo",
+// "email" => "mk@gmail.com",
+// "password" => "mk12345"
+// ];
+//
+// $user = $user_dao->add($user1);
+// print_r($user);
+//
+// $user2 = [
+// "name" => "Hana",
+// "surname" => "Kapo",
+// "email" => "hk@gmail.com",
+// "password" => "hk123"
+// ];
+//
+// $user = $user_dao->add($user2);
+// print_r($user);
+
+//  $user3 = [
+//  "name" => "Sanela",
+//  "surname" => "Imamovic",
+//  "email" => "sana@gmail.com",
+//  "password" => "sana123"
+//  ];
+//
+// $user = $user_dao->add($user3);
+// print_r($user);
+
+// $city1 = [
+// "name" => "Sarajevo",
+// "postal_co" => "71 000"
+// ];
+//
+// $city = $city_dao->add($city1);
+// print_r($city);
+//
+// $city2 = [
+// "name" => "Zenica",
+// "postal_co" => "72 000"
+// ];
+//
+// $city = $city_dao->add($city2);
+// print_r($city);
+
+// $city3 = [
+// "name" => "Mostar",
+// "postal_co" => "88 000"
+// ];
+//
+// $city = $city_dao->add($city3);
+// print_r($city);
+
+// $photographer1 = [
+// "name" => "John",
+// "surname" => "Doe",
+// "email" => "johnd@gmail.com",
+// "status" => "ACTIVE"
+// ];
+//
+// $photographer = $photographer_dao->add($photographer1);
+// print_r($photographer);
+
+// $photographer2 = [
+// "name" => "Jena",
+// "surname" => "Doe",
+// "email" => "jena@gmail.com",
+// "status" => "NOT ACTIVE"
+// ];
+//
+// $photographer = $photographer_dao->add($photographer2);
+// print_r($photographer);
+
+// $reservation1 = [
+// "duration" => "4h",
+// "time" => "14:00",
+// "date" => "23.6.2021.",
+// "id_user" => "1",
+// "id_photographer" => "1"
+// ];
+//
+// $reservation = $reservation_dao->add($reservation1);
+// print_r($reservation);
+
+// $reservation2 = [
+// "duration" => "3h",
+// "time" => "16:00",
+// "date" => "13.8.2021.",
+// "id_user" => "2",
+// "id_photographer" => "2"
+// ];
+//
+// $reservation = $reservation_dao->add($reservation2);
+// print_r($reservation);
+
+// $restaurant1 = [
+// "name" => "Hotel Hills",
+// "capacity" => "300",
+// "bend" => "Dino Merlin band",
+// "status" => "ACTIVE",
+// "id_city" => "1"
+// ];
+//
+// $restaurant = $restaurant_dao->add($restaurant1);
+// print_r($restaurant);
+
+// $restaurant2 = [
+// "name" => "Izvor",
+// "capacity" => "150",
+// "bend" => "HMH band",
+// "status" => "ACTIVE",
+// "id_city" => "2"
+// ];
+//
+// $restaurant = $restaurant_dao->add($restaurant2);
+// print_r($restaurant);
 
 //$bands = $dao->get_all();
 //print_r($bands);
