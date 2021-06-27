@@ -30,10 +30,13 @@ Flight::register('cityService', 'CityService');
 Flight::register('userService', 'UserService');
 Flight::register('photographerService', 'PhotographerService');
 
+
+
 /*Include all routes*/
 require_once dirname(__FILE__)."/routes/cities.php";
 require_once dirname(__FILE__)."/routes/users.php";
 require_once dirname(__FILE__)."/routes/photographers.php";
+require_once dirname(__FILE__)."/routes/doc.php";
 
 Flight::start();
 

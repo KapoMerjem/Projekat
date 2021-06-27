@@ -1,22 +1,29 @@
 <?php
+require_once dirname(__FILE__)."/../vendor/autoload.php";
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+$openapi = \OpenApi\scan(dirname(__FILE__)."/routes");
+header('Content-Type: application/json');
+echo $openapi->toJson();
 
-require_once dirname(__FILE__)."/dao/UserDao.class.php";
-require_once dirname(__FILE__)."/dao/CityDao.class.php";
-require_once dirname(__FILE__)."/dao/PhotographerDao.class.php";
-require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
-require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
+ ?>
 
-$dao = new CityDao();
-
-print_r($_GET);
-die;
-$cities = $dao->get_all($_GET['iffset'], $_GET['limit']);
-//print_r($cities);
-echo json_encode($cities, JSON_PRETTY_PRINT);
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+//
+// require_once dirname(__FILE__)."/dao/UserDao.class.php";
+// require_once dirname(__FILE__)."/dao/CityDao.class.php";
+// require_once dirname(__FILE__)."/dao/PhotographerDao.class.php";
+// require_once dirname(__FILE__)."/dao/RestaurantDao.class.php";
+// require_once dirname(__FILE__)."/dao/ReservationDao.class.php";
+//
+// $dao = new CityDao();
+//
+// print_r($_GET);
+// die;
+// $cities = $dao->get_all($_GET['iffset'], $_GET['limit']);
+// //print_r($cities);
+// echo json_encode($cities, JSON_PRETTY_PRINT);
 
 // $dao = new CityDao();
 //
@@ -209,7 +216,3 @@ echo json_encode($cities, JSON_PRETTY_PRINT);
 //$user_dao = new UserDao();
 
 //$user = $user_dao->get_user_by_user_id(3);
-
-
-
- ?>

@@ -26,6 +26,5 @@ public function add($photographer){
     print_r($e);
     die;
 }
-
 }
 ?>
