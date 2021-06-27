@@ -34,9 +34,12 @@ class UserService extends BaseService{
       $this->dao->commit();
     } catch(\Exception $e){
       $this->dao->rollBack();
-      throw $e;
+      if(str_contains($e->getMessage(), 'users.uq_user_email')){
+        throw new Exception("Account with same email exist in the database", 400, $e);
+      }else{
+        throw $e;
+      }
     }
-
 
 // TODO: send email with some token
 
