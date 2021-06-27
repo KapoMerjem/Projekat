@@ -5,8 +5,9 @@ Flight::route('GET /photographers', function(){
     $offset = Flight::query('offset', 0);
     $limit = Flight::query('limit', 25);
     $search = Flight::query('search');
+    $order = Flight::query('order', '-id');
 
-    Flight::json(Flight::photographerService()->get_photographers($id_city, $offset, $limit, $search));
+    Flight::json(Flight::photographerService()->get_photographers($id_city, $offset, $limit, $search, $order));
 });
 
 Flight::route('POST /photographers', function(){

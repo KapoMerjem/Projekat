@@ -7,7 +7,8 @@ class PhotographerDao extends BaseDao{
     parent::__construct("photographers");
   }
 
-  public function get_photographers($id_city, $offset, $limit, $search){
+  public function get_photographers($id_city, $offset, $limit, $search, $order){
+    list($order_column, $order_direction) = self::parse_order($order);
 
     $params = ["id_city" => $id_city];
     $query = "SELECT *
@@ -19,6 +20,7 @@ class PhotographerDao extends BaseDao{
       $params['search'] = strtolower($search);
     }
 
+      $query .="ORDER BY ${order_column} ${order_direction} ";
       $query .="LIMIT ${limit} OFFSET ${offset}";
 
     return $this->query($query, ["id_city" => $id_city]);
