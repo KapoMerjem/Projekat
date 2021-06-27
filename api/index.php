@@ -7,6 +7,7 @@ error_reporting(E_ALL);
 require_once dirname(__FILE__).'/../vendor/autoload.php';
 require_once dirname(__FILE__).'/services/CityService.class.php';
 require_once dirname(__FILE__).'/services/UserService.class.php';
+require_once dirname(__FILE__).'/services/PhotographerService.class.php';
 
 Flight::set('flight.log_errors', TRUE);
 
@@ -27,10 +28,12 @@ Flight::map('query', function($name, $default_value = NULL){
 /*Register Business logic layer services*/
 Flight::register('cityService', 'CityService');
 Flight::register('userService', 'UserService');
+Flight::register('photographerService', 'PhotographerService');
 
 /*Include all routes*/
 require_once dirname(__FILE__)."/routes/cities.php";
 require_once dirname(__FILE__)."/routes/users.php";
+require_once dirname(__FILE__)."/routes/photographers.php";
 
 Flight::start();
 
