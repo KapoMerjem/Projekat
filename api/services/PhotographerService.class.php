@@ -9,6 +9,10 @@ class PhotographerService extends BaseService{
     $this->dao = new PhotographerDao();
   }
 
+  public function get_photographers($id_city, $offset, $limit, $search){
+    return $this->dao->get_photographers($id_city, $offset, $limit, $search);
+  }
+
 public function add($photographer){
   try {
     return parent::add($photographer);

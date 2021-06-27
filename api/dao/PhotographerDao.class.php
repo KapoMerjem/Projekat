@@ -7,8 +7,21 @@ class PhotographerDao extends BaseDao{
     parent::__construct("photographers");
   }
 
-  public function get_all_photographers(){
-    return $this->query("SELECT * FROM photographers", []);
+  public function get_photographers($id_city, $offset, $limit, $search){
+
+    $params = ["id_city" => $id_city];
+    $query = "SELECT *
+              FROM photographers
+              WHERE id_city = :id_city";
+
+    if(isset($search)){
+      $query .= " AND LOWER(name) LIKE CONCAT ('%', :search, '%') OR LOWER(subject) LIKE CONCAT('%', :search, '%'))";
+      $params['search'] = strtolower($search);
+    }
+
+      $query .="LIMIT ${limit} OFFSET ${offset}";
+
+    return $this->query($query, ["id_city" => $id_city]);
   }
 
 }
