@@ -18,7 +18,7 @@ class UserService extends BaseService{
     if(!isset($user['account'])) throw new Exception("Account field is required");
 
     try{
-      //open transaction here
+      $this->dao->beginTransaction();
           $city = this->cityDao->add([
             "name" => $user['account'],
             "postal_co" => "71 000"
@@ -31,10 +31,9 @@ class UserService extends BaseService{
         "password" => $user['password'],
         "token" => md5(random_bytes(16))
       ]);
-
-      //commit here
+      $this->dao->commit();
     } catch(\Exception $e){
-      //rollback
+      $this->dao->rollBack();
       throw $e;
     }
 
