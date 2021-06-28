@@ -25,6 +25,15 @@ Flight::map('query', function($name, $default_value = NULL){
   return $query_param;
 });
 
+
+
+Flight::route('GET /swagger', function(){
+  $openapi = @\OpenApi\scan(dirname(__FILE__)."/routes");
+  header('Content-Type: application/json');
+  echo $openapi->toJson();
+
+});
+
 /*Register Business logic layer services*/
 Flight::register('cityService', 'CityService');
 Flight::register('userService', 'UserService');
@@ -36,7 +45,7 @@ Flight::register('photographerService', 'PhotographerService');
 require_once dirname(__FILE__)."/routes/cities.php";
 require_once dirname(__FILE__)."/routes/users.php";
 require_once dirname(__FILE__)."/routes/photographers.php";
-require_once dirname(__FILE__)."/routes/doc.php";
+
 
 Flight::start();
 

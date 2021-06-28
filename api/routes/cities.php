@@ -1,5 +1,13 @@
 <?php
 
+/* Swagger documentation */
+/**
+ * @OA\Info(title="Wedding Planner API", version="0.1")
+ * @OA\OpenApi(
+ *    @OA\Server(url="http://localhost/Projekat/api/", description="Development Environment")
+* )
+ */
+
 /**
  * @OA\Get(path="/cities",
  *     @OA\Response(response="200", description="List cities from database")
@@ -18,7 +26,7 @@ Flight::route('GET /cities', function(){
 
 /**
  * @OA\Get(path="/cities/{id}",
-*       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", default=1),
+*       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", example=1),
  *      @OA\Response(response="200", description="List cities from database"),
  * )
  */
@@ -40,7 +48,7 @@ Flight::route('POST /cities', function(){
 
 /**
  * @OA\Put(path="/cities/{id}",
- *       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", default=1),
+ *       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", example=1),
  *      @OA\Response(response="200", description="Update cities based on id"),
  * )
  */
