@@ -41,7 +41,7 @@ Flight::route('GET /cities/@id', function($id){
 });
 
 /**
- * @OA\Post(path="/cities",
+ * @OA\Post(path="/cities", tags){"cities"},
  *@OA\RequestBody(
  *    description="Basic city info",
  *    required=true,
