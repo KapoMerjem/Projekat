@@ -30,9 +30,9 @@ Flight::route('GET /cities', function(){
 });
 
 /**
- * @OA\Get(path="/cities/{id}",
-*       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", example=1),
- *      @OA\Response(response="200", description="List cities from database"),
+ * @OA\Get(path="/cities/{id}", tags={"cities"},
+*       @OA\Parameter(@OA\Schema(type="integer"),in="path", name="id", default=1, description="id of city"),
+ *      @OA\Response(response="200", description="Fetch individual city"),
  * )
  */
 
@@ -42,7 +42,17 @@ Flight::route('GET /cities/@id', function($id){
 
 /**
  * @OA\Post(path="/cities",
- *      @OA\Response(response="200", description="Add city"),
+ *@OA\RequestBody(
+ *    description="Basic city info",
+ *    required=true,
+ *      @OA\MedidaType(
+ *          mediaType="application/json",
+ *          @OA\Property(property="name", required="true", type="string", example="My test city", description="Name of rhe city"),
+ *          @OA\Property(property="postal_co", type="string", example="71 000", description="Postal number")
+ *            )
+ *         )
+ *      ),
+ *      @OA\Response(response="200", description="Ciity that has been added into database with id assigned.")
  * )
  */
 
@@ -52,8 +62,18 @@ Flight::route('POST /cities', function(){
 });
 
 /**
- * @OA\Put(path="/cities/{id}",
- *       @OA\Parameter(@OA\Schema(type="integer"),in="path", allowReserved=true, name="id", example=1),
+ * @OA\Put(path="/cities/{id}", tags){"city"},
+ *    @OA\Parameter(@OA\Schema(type="integer"),in="path", name="id", default=1),
+*     @OA\RequestBody(
+*       description="Basic city info that is going to be updated",
+*       required=true,
+*          @OA\MedidaType(
+*              mediaType="application/json",
+*          @OA\Property(property="name", required="true", type="string", example="My test city", description="Name of rhe city"),
+*          @OA\Property(property="postal_co", type="string", example="71 000", description="Postal number")
+*            )
+*         )
+*      ),
  *      @OA\Response(response="200", description="Update cities based on id"),
  * )
  */

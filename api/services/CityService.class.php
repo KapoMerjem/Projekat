@@ -20,7 +20,7 @@ class CityService extends BaseService{
 public function add($city){
   //validation of account data
   if(!isset($city['name'])) throw new Exception("Name is missing! ");
-
+  $city['created_at']=date(Config::DATE_FORMAT);
   return parent::add($city);
 
   }
