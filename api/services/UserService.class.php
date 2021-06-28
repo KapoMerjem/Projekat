@@ -4,6 +4,7 @@ require_once dirname (__FILE__).'/BaseService.class.php';
 require_once dirname(__FILE__).'/../dao/UserDao.class.php';
 require_once dirname(__FILE__).'/../dao/CityDao.class.php';
 
+use \Firebase\JWT\JWT;
 
 class UserService extends BaseService{
 
@@ -28,7 +29,9 @@ public function login($user){
   if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
   if ($db_user['password']) != md5($user['password']) throw new Exception("Invalid password", 4000);
 
-  return $db_user;
+$jwt = JWT::encode(["id" => $d["id"], "aid" => $db_user["id_city"], "r" => $db_user["role"]], "JWT SECRET");
+
+  return ["token" => $jwt] ;
 
 }
 
