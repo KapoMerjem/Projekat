@@ -49,4 +49,25 @@ Flight::route('POST /users/login', function(){
     $data = Flight::request()->data->getData();
     Flight::json(Flight::userService()->login($data));
 });
+
+/**
+ * @OA\Post(path="/users/login", tags={"users"},
+ *@OA\RequestBody(
+ *    description="Send recovery URL",
+ *    required=true,
+ *      @OA\MedidaType(
+ *          mediaType="application/json",
+*           @OA\Property(property="email", required="true", type="meejakapo@gmail.com", example="My test city", description="Email of the user"),
+*          @OA\Property(property="password", required="true", type="string", example="My test city", description="Password"),
+*   )
+ *         )
+ *      ),
+ *      @OA\Response(response="200", description="Message that user has been created.")
+ * )
+ */
+
+Flight::route('POST /users/forgot', function(){
+    $data = Flight::request()->data->getData();
+    Flight::userService()->login($data));
+});
 ?>

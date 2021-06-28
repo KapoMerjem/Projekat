@@ -13,11 +13,19 @@ class UserService extends BaseService{
     $this->dao = new UserDao();
     $this->cityDao = new CityDao();
   }
+public function forgot($user){
+  $this->dao->get_user_ba_email($user['email']);
 
+  if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
+
+$db_user = $this->update($db_user['id'], ['token' => md5(random_bytes(16))]);
+  //generate token - and save it to db
+
+}
 public function login($user){
   $this->dao->get_user_ba_email($user['email']);
 
-  if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 4000);
+  if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
   if ($db_user['password']) != md5($user['password']) throw new Exception("Invalid password", 4000);
 
   return $db_user;
