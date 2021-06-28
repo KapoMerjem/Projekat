@@ -14,6 +14,16 @@ class UserService extends BaseService{
     $this->cityDao = new CityDao();
   }
 
+public function login($user){
+  $this->dao->get_user_ba_email($user['email']);
+
+  if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 4000);
+  if ($db_user['password']) != md5($user['password']) throw new Exception("Invalid password", 4000);
+
+  return $db_user;
+
+}
+
   public function register($user){
     if(!isset($user['account'])) throw new Exception("Account field is required");
 
@@ -28,7 +38,7 @@ class UserService extends BaseService{
         "id_city" => $city['id'],
         "name" => $user['name'],
         "email" => $user['email'],
-        "password" => $user['password'],
+        "password" => md5($user['password']),
         "token" => md5(random_bytes(16))
       ]);
       $this->dao->commit();
