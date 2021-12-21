@@ -14,6 +14,13 @@ class UserService extends BaseService{
     $this->dao = new UserDao();
     $this->cityDao = new CityDao();
   }
+
+public function reset($user){
+  $db_user = $this->dao->get_user_by_token($user['token']);
+  if(!isset($db_user['id'])) throw new Ecxeption("Invalid token", 400);
+  $this->dao->update($db_user['id'], ['password' => md5($user['password']), 'token' => NULL]);
+}
+
 public function forgot($user){
   $this->dao->get_user_ba_email($user['email']);
 
@@ -27,7 +34,7 @@ public function login($user){
   $this->dao->get_user_ba_email($user['email']);
 
   if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
-  if ($db_user['password']) != md5($user['password']) throw new Exception("Invalid password", 4000);
+  if ($db_user['password'] != md5($user['password'])) throw new Exception("Invalid password", 4000);
 
 $jwt = JWT::encode(["id" => $d["id"], "aid" => $db_user["id_city"], "r" => $db_user["role"]], "JWT SECRET");
 

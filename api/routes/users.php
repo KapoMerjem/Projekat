@@ -21,7 +21,7 @@
 
 Flight::route('POST /users/register', function(){
     $data = Flight::request()->data->getData();
-    Flight::userService()->register($data));
+    Flight::userService()->register($data);
 });
 
 Flight::route('POST /users/confirm/@token', function($token){
@@ -68,6 +68,6 @@ Flight::route('POST /users/login', function(){
 
 Flight::route('POST /users/forgot', function(){
     $data = Flight::request()->data->getData();
-    Flight::userService()->login($data));
+    Flight::userService()->login($data);
 });
 ?>
