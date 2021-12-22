@@ -41,14 +41,13 @@ public function parse_order($order){
 }
 
 public function __construct($table){
-    $this->table = $table;
-    try {
-     $this->connection = new PDO("mysql:host=".Config::DB_HOST.";dbname=".Config::DB_SCHEME, Config::DB_USERNAME, Config::DB_PASSWORD);
-     $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-     //$this->connection->setAttribute(PDO::ATTR_AUTOCOMMIT, 0);
-   } catch(PDOException $e) {
-     throw $e;
-   }
+  $this->table=$table;
+  try {
+       $this->pdo = new PDO(Config::CONNECTION_STRING, Config::DB_USERNAME, Config::DB_PASSWORD);
+       $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+     } catch(PDOException $e) {
+       throw $e;
+       }
 }
   protected function insert($table, $entity){
     $query = "INSERT INTO ${table} (";

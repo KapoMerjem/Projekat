@@ -9,8 +9,10 @@ use \Firebase\JWT\JWT;
 class UserService extends BaseService{
 
   private $cityDao;
+  protected $dao;
 
   public function __construct(){
+
     $this->dao = new UserDao();
     $this->cityDao = new CityDao();
   }
