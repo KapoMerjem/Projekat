@@ -24,7 +24,7 @@ public function reset($user){
 }
 
 public function forgot($user){
-  $this->dao->get_user_ba_email($user['email']);
+  $this->dao->get_user_by_email($user['email']);
 
   if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
 
@@ -33,7 +33,7 @@ $db_user = $this->update($db_user['id'], ['token' => md5(random_bytes(16))]);
 
 }
 public function login($user){
-  $this->dao->get_user_ba_email($user['email']);
+  $this->dao->get_user_by_email($user['email']);
 
   if (!isset($db_user['id'])) throw new Exception("User doesn't exist", 400);
   if ($db_user['password'] != md5($user['password'])) throw new Exception("Invalid password", 4000);
