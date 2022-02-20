@@ -1,6 +1,6 @@
-## Wedding Planner
+# Wedding Planner
 
-# Web application using HTML5, CSS3, JavaScript, PHP, Bootstrap
+## Web application using HTML5, CSS3, JavaScript, PHP, Bootstrap
 
 <img src="./assets/readme/Screenshot_1.png">
 
